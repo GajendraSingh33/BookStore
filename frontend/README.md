@@ -14,3 +14,14 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+<!-- concepts: -->
+## react-hook-form : to make validation to the login and signup forms.
+## react-router-dom : to create router in react.
+## react-slick : React slick is a carousel component built with React.
+## daisyUI : for react components.
+## tailwind CSS : Installing Tailwind CSS as a Vite plugin is the most seamless way to integrate it with frameworks         like React Router.
+

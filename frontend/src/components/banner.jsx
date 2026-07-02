@@ -33,7 +33,7 @@ function Banner() {
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
           src="/Banner.png"
-          className="md:w-[550px] md:h-[460px] md:ml-12"
+          className="md:w-550px md:h-460px md:ml-12"
           alt="Banner"
           />
         </div>
