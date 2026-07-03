@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "mern project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GajendraSingh33/BookStore.git"
+  },
+  "author": "gajendra singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GajendraSingh33/BookStore/issues"
+  },
+  "homepage": "https://github.com/GajendraSingh33/BookStore#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
