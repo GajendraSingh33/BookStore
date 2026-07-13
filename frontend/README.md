@@ -22,6 +22,6 @@ If you are developing a production application, we recommend using TypeScript wi
 ## react-hook-form : to make validation to the login and signup forms.
 ## react-router-dom : to create router in react.
 ## react-slick : React slick is a carousel component built with React.
-## daisyUI : for react components.
+## daisyUI : for react components, cards, etc.
 ## tailwind CSS : Installing Tailwind CSS as a Vite plugin is the most seamless way to integrate it with frameworks         like React Router.
 
