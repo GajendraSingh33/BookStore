@@ -56,30 +56,3 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
-
-// fecthing data from database
-// app.get('/books', async (req, res) => {
-//     try {
-//         const result = await pool.query('SELECT * FROM books');
-//         res.json(result.rows);
-//     } catch (err) {
-//         console.error('Error fetching books:', err.stack);
-//         res.status(500).send('Error fetching books');
-//     }
-// });
-
-// adding data to database
-// app.post('/books', async (req, res) => {
-//     const { title, author, price } = req.body;
-//     try {
-//         const result = await pool.query(
-//             'INSERT INTO books (title, author, price) VALUES ($1, $2, $3) RETURNING *',
-//             [title, author, price]
-//         );
-//         res.status(201).json(result.rows[0]);
-//     } catch (err) {
-//         console.error('Error adding book:', err.stack);
-//         res.status(500).send('Error adding book');
-//     }
-// });
