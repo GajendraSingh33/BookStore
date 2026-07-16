@@ -1,7 +1,7 @@
 import pkg from 'pg';
 const { Pool } = pkg;
 
-// connect to postgres database
+// connect to postgres database by getting credentials from .env file
 const pool = new Pool({
     host:"localhost",
     user:"postgres",
