@@ -30,11 +30,11 @@ connectDB();
 export default pool;
 
 
-//fetching data from database 
-pool.query('SELECT * FROM books', (err, res) => {
-    if (err) {
-        console.error('Error executing query', err.stack);
-    } else {
-        console.log('Books:', res.rows);
-    }
-});
+// //fetching data from database 
+// pool.query('SELECT * FROM books', (err, res) => {
+//     if (err) {
+//         console.error('Error executing query', err.stack);
+//     } else {
+//         console.log('Books:', res.rows);
+//     }
+// });

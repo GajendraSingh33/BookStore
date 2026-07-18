@@ -1,13 +1,17 @@
-import Book from '../model/book.model.js';
+import Book from "../model/book.model.js";
 
-// Get all books
 export const getAllBooks = async (req, res) => {
   try {
-    const books = await Book.getAllBooks();
+    const books = await Book.findAll();
+
     res.status(200).json(books);
   } catch (error) {
-    console.error('Error fetching books:', error);
-    res.status(500).json({ error: error.message });
+    console.error("Error fetching books:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch books",
+      error: error.message,
+    });
   }
 };
-export default getAllBooks;
