@@ -10,6 +10,7 @@ const pool = new Pool({
     port:5432
 })
 
+// Test database connection
 async function connectDB() {
   try {
     await pool.connect();
@@ -21,9 +22,7 @@ async function connectDB() {
     
   } catch (err) {
     console.error('Connection error:', err.stack);
-  } finally {
-    await pool.end();
-  }
+  } 
 }
 connectDB();
 
