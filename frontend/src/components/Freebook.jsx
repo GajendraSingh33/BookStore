@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Slider from "react-slick";
+import SliderModule from "react-slick";
 import axios from "axios";
 import Cards from "./Cards";
+
+const Slider = SliderModule?.default ?? SliderModule;
 
 function Freebook() {
   const [book, setBook] = useState([]);
@@ -70,10 +72,12 @@ function Freebook() {
           </p>
         </div>
 
-        <div>
-        {book.map((item) => (
-        <Cards item={item} key={item._id} />
-        ))}
+        <div className="slider-container">
+          <Slider {...settings}>
+            {book.map((item) => (
+              <Cards item={item} key={item.id} />
+            ))}
+          </Slider>
         </div>
 
       </div>

@@ -3,7 +3,7 @@ import Cards from "./Cards";
 import axios from "axios";
 import { Link } from "react-router-dom";
 function Course() {
-  const [book, setBook] = useState([]);
+  const [book, setBook] = useState([]);      // State to hold the fetched book data
   useEffect(() => {
     const getBook = async () => {
       try {

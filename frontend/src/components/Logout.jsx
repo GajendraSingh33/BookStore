@@ -1,24 +1,16 @@
 import React from "react";
-import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../context/auth-context";
 import toast from "react-hot-toast";
 
 function Logout() {
-  const [authUser, setAuthUser] = useAuth();
+  const [, setAuthUser] = useAuth();
   const handleLogout = () => {
     try {
-      setAuthUser({
-        ...authUser,
-        user: null,
-      });
+      setAuthUser(undefined);
       localStorage.removeItem("Users");
       toast.success("Logout successfully");
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 3000);
     } catch (error) {
       toast.error("Error: " + error);
-      setTimeout(() => {}, 2000);
     }
   };
   return (

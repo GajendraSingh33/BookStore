@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useAuth } from "../context/auth-context";
 function Login() {
+  const [, setAuthUser] = useAuth();
   const {
     register,
     handleSubmit,
@@ -15,26 +17,21 @@ function Login() {
       email: data.email,
       password: data.password,
     };
-    await axios
-      .post("http://localhost:4001/user/login", userInfo)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data) {
-          toast.success("Loggedin Successfully");
-          document.getElementById("my_modal_3").close();
-          setTimeout(() => {
-            window.location.reload();
-            localStorage.setItem("Users", JSON.stringify(res.data.user));
-          }, 1000);
-        }
-      })
-      .catch((err) => {
-        if (err.response) {
-          console.log(err);
-          toast.error("Error: " + err.response.data.message);
-          setTimeout(() => {}, 2000);
-        }
-      });
+    try {
+      const res = await axios.post("http://localhost:4001/user/login", userInfo);
+      if (res.data?.user) {
+        toast.success("Loggedin Successfully");
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+        setAuthUser(res.data.user);
+        document.getElementById("my_modal_3").close();
+      }
+    } catch (err) {
+      if (err.response) {
+        toast.error("Error: " + err.response.data.message);
+        return;
+      }
+      toast.error("Error: Could not connect to server");
+    }
   };
   return (
     <div>
