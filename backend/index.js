@@ -1,10 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import bookRoutes from './routes/book.route.js';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 dotenv.config();
 
