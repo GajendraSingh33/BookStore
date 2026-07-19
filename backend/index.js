@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import bookRoutes from './routes/book.route.js';
+import userRoutes from './routes/user.route.js';
 
 const app = express();
 app.use(express.json());
@@ -18,7 +19,8 @@ app.get('/', (req, res) => {
 
 
 // defining routes
-app.use("/books", bookRoutes);
+app.use("/book", bookRoutes);
+app.use("/user", userRoutes);
 
 
 // start the server
