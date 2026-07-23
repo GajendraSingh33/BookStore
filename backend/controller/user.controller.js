@@ -33,7 +33,7 @@ export const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const hashPassword = await bcryptjs.hash(password, 10);
+    const hashPassword = await bcrypt.hash(password, 10);
     return res.status(200).json({
       message: "Login successful",
       user: {
