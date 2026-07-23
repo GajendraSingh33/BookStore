@@ -20,9 +20,8 @@ app.get('/', (req, res) => {
 
 // defining routes
 app.use("/book", bookRoute);
-// app.use("/user", userRoute);
 app.use("/users", userRoute);
-// app.use("/", userRoute);
+
 
 
 // start the server
