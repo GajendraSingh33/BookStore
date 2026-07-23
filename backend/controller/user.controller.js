@@ -1,4 +1,5 @@
 import User from "../model/user.model.js";
+import bcrypt from "bcryptjs";
 
 export const signupUser = async (req, res) => {
   try {
@@ -32,12 +33,14 @@ export const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
+    const hashPassword = await bcryptjs.hash(password, 10);
     return res.status(200).json({
       message: "Login successful",
       user: {
         id: user.id,
         fullname: user.fullname,
         email: user.email,
+        password: user.hashPassword,
       },
     });
   } catch (error) {
