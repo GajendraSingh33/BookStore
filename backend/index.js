@@ -2,11 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import bookRoutes from './routes/book.route.js';
-import userRoutes from './routes/user.route.js';
+import bookRoute from './routes/book.route.js';
+import userRoute from './routes/user.route.js';
 
 const app = express();
-app.use(express.json());
+app.use(express.json());  // parse incoming JSON requests
 app.use(cors());
 
 dotenv.config();
@@ -19,8 +19,10 @@ app.get('/', (req, res) => {
 
 
 // defining routes
-app.use("/book", bookRoutes);
-app.use("/user", userRoutes);
+app.use("/book", bookRoute);
+// app.use("/user", userRoute);
+app.use("/users", userRoute);
+// app.use("/", userRoute);
 
 
 // start the server
